@@ -1,4 +1,0 @@
-/Users/ikhanchoi/Desktop/Git/blackhole/cmake-build-debug/CMakeFiles/imgui.dir
-/Users/ikhanchoi/Desktop/Git/blackhole/cmake-build-debug/CMakeFiles/blackhole.dir
-/Users/ikhanchoi/Desktop/Git/blackhole/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/ikhanchoi/Desktop/Git/blackhole/cmake-build-debug/CMakeFiles/rebuild_cache.dir
