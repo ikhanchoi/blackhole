@@ -32,44 +32,44 @@ bool recording = false, recording_prev = false;
 int frameCount = 0;
 
 void encodingThreadFunc(GifWriter* writer, int width, int height) {
-    while (!stopEncoding || !frameQueue.empty()) {
-        std::unique_lock<std::mutex> lock(queueMutex);
-        frameReady.wait(lock, [] {
-            return !frameQueue.empty() || stopEncoding;
-        });
-        while (!frameQueue.empty()) {
-            auto frame = std::move(frameQueue.front());
-            frameQueue.pop();
-            lock.unlock();
-            GifWriteFrame(writer, frame.data(), width, height, 10);
-            lock.lock();
-        }
-    }
+	while (!stopEncoding || !frameQueue.empty()) {
+		std::unique_lock<std::mutex> lock(queueMutex);
+		frameReady.wait(lock, [] {
+			return !frameQueue.empty() || stopEncoding;
+		});
+		while (!frameQueue.empty()) {
+			auto frame = std::move(frameQueue.front());
+			frameQueue.pop();
+			lock.unlock();
+			GifWriteFrame(writer, frame.data(), width, height, 10);
+			lock.lock();
+		}
+	}
 	GifEnd(writer);
 }
 
 void startRecording(int width, int height) {
-    if (encodingThread.joinable()) return;
-    stopEncoding = false;
-    GifBegin(&gif, "output.gif", width, height, 10);
-    encodingThread = std::thread(encodingThreadFunc, &gif, width, height);
+	if (encodingThread.joinable()) return;
+	stopEncoding = false;
+	GifBegin(&gif, "output.gif", width, height, 10);
+	encodingThread = std::thread(encodingThreadFunc, &gif, width, height);
 }
 
 void stopRecording() {
-    stopEncoding = true;
-    frameReady.notify_all();
-    if (encodingThread.joinable()) encodingThread.join();
-    {
-        std::lock_guard<std::mutex> lock(queueMutex);
-        while (!frameQueue.empty())
-            frameQueue.pop();
-    }
+	stopEncoding = true;
+	frameReady.notify_all();
+	if (encodingThread.joinable()) encodingThread.join();
+	{
+		std::lock_guard<std::mutex> lock(queueMutex);
+		while (!frameQueue.empty())
+			frameQueue.pop();
+	}
 }
 
 void captureFrame(int width, int height) {
-    glReadBuffer(GL_FRONT);
+	glReadBuffer(GL_FRONT);
 	std::vector<GLubyte> frame(width * height * 4);
-    glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, frame.data());
+	glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, frame.data());
 	std::vector<GLubyte> flipped(width * height * 4);
 	for (int i = 0; i < height; ++i) {
 		int from = i * width * 4;
@@ -96,8 +96,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 
 // camera position in spherical coordinates
-float r = 1.0f;
-float th = glm::radians(90.0f);
+float r = 10.0f;
+float th = glm::radians(75.0f);
 float ph = glm::radians(270.0f);
 
 // mouse processing
@@ -109,7 +109,7 @@ const double eps = 0.01f;
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
 	if (button == GLFW_MOUSE_BUTTON_LEFT) {
 		if (action == GLFW_PRESS) {
-			isDragging = true;
+			isDragging = false; // true
 			glfwGetCursorPos(window, &up, &vp);
 		} else if (action == GLFW_RELEASE) {
 			isDragging = false;
@@ -174,7 +174,7 @@ int main() {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(quad), quad, GL_STATIC_DRAW);
 
 	std::ifstream vfs("../quad.vert");
-	std::ifstream ffs("../kerr.frag");
+	std::ifstream ffs("../boyer_lindquist.frag");
 	std::stringstream vss;
 	std::stringstream fss;
 	vss << vfs.rdbuf();
@@ -226,26 +226,35 @@ int main() {
 	// OpenGL setting
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 	glBindVertexArray(vertexArrayObject);
 	glUseProgram(program);
 
 
+	int steps = 200;
+	float timeStep = 0.050f;
 
-    while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	while (!glfwWindowShouldClose(window)) {
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glfwGetFramebufferSize(window, &width, &height);
 		glViewport(0, 0, width, height);
+		ImVec2 mousePos = ImGui::GetMousePos();
+		int x = static_cast<int>(mousePos.x);
+		int y = static_cast<int>(mousePos.y);
+		glUniform2f(glGetUniformLocation(program, "iMouse"), (float)x, (float)y);
 		glUniform2f(glGetUniformLocation(program, "iResolution"), (float)width, (float)height);
 		glUniform1f(glGetUniformLocation(program, "iTime"), (float)glfwGetTime());
 
 		glm::vec3 position(r * sin(th) * cos(ph), r * sin(th) * sin(ph), r * cos(th));
-        glm::mat4 view = glm::lookAt(position, glm::vec3(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 view = glm::lookAt(position, glm::vec3(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)(width)/(float)(height), 0.1f, 100.0f);
 		glUniform3f(glGetUniformLocation(program, "iPosition"), position.x, position.y, position.z);
 		glUniformMatrix4fv(glGetUniformLocation(program, "iView"), 1, GL_FALSE, &view[0][0]);
 		glUniformMatrix4fv(glGetUniformLocation(program, "iProjection"), 1, GL_FALSE, &projection[0][0]);
+
+		glUniform1i(glGetUniformLocation(program, "iSteps"), steps);
+		glUniform1f(glGetUniformLocation(program, "iTimeStep"), timeStep);
 
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
@@ -262,19 +271,27 @@ int main() {
 		// mouse processing, in fact, registration of callback is faster
 
 
-		// print FPS
+		GLubyte pixel[3] = {0, 0, 0};
+		glReadPixels(2 * x, height - 2 * y, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
+
 		ImGui_ImplOpenGL3_NewFrame(), ImGui_ImplGlfw_NewFrame(), ImGui::NewFrame();
 		ImGui::Begin("Black hole");
 		ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
 		ImGui::Text("Recording: %s", recording ? "ON" : "OFF");
+		ImGui::SliderFloat("Radius", &r, 1.0f, 50.0f);
+		ImGui::SliderInt("Steps", &steps, 0, 300);
+		ImGui::SliderFloat("Time step", &timeStep, 0.001f, 0.1f);
+		ImGui::Text("Mouse: (%d, %d)", x, y);
+		ImGui::Text("(r,th,ph): (%.3f, %.3f, %.3f)", pixel[0] / 255.0f, pixel[1] / 255.0f, pixel[2] / 255.0f);
+		ImGui::ColorButton("Color", ImVec4(pixel[0] / 255.0f, pixel[1] / 255.0f, pixel[2] / 255.0f, 1.0f), ImGuiColorEditFlags_NoTooltip, ImVec2(50, 50));
 		ImGui::End();
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 		// swapping buffer
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+	}
 
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown();
@@ -285,6 +302,6 @@ int main() {
 	glDeleteProgram(program);
 
 	glfwDestroyWindow(window);
-    glfwTerminate();
-    return 0;
+	glfwTerminate();
+	return 0;
 }
