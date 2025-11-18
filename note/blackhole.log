@@ -1,0 +1,578 @@
+This is LuaHBTeX, Version 1.13.0 (TeX Live 2021)  (format=lualatex 2021.11.19)  6 NOV 2025 17:36
+ restricted system commands enabled.
+**blackhole.tex
+(./blackhole.tex
+LaTeX2e <2020-10-01> patch level 4
+Lua module: luaotfload 2021-01-08 3.17 Lua based OpenType font support
+Lua module: lualibs 2020-12-30 2.73 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-12-30 2.73 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "/Users/ikhanchoi/Library/texlive/20
+21/texmf-var/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2021-01-07.lua" from kpse-res
+olved path "/usr/local/texlive/2021/texmf-dist/tex/luatex/luaotfload/fontloader-
+2021-01-07.lua".
+Lua-only attribute luaotfload@noligature = 1
+Lua-only attribute luaotfload@syllabe = 2
+luaotfload | init : Context OpenType loader version 0x1.8e76c8b439581p+1
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 3
+luaotfload | conf : Root cache directory is "/Users/ikhanchoi/Library/texlive/20
+21/texmf-var/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_truetype_file'.
+Inserting `luaotfload.harf.finalize_vlist' at position 1 in `post_linebreak_filt
+er'.
+Inserting `luaotfload.harf.finalize_hlist' at position 2 in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' at position 1 in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' at position 1 in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' at position 1 in `glyph_info'.
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2021-02-18> (/usr/local/texlive/2021/texmf-dist/tex/lat
+ex/amscls/amsart.cls
+Document Class: amsart 2020/05/29 v2.20.6
+\linespacing=\dimen138
+\normalparindent=\dimen139
+\normaltopskip=\skip47
+luaotfload | db : Font names database loaded from /Users/ikhanchoi/Library/texli
+ve/2021/texmf-var/luatex-cache/generic/names/luaotfload-names.luc (/usr/local/t
+exlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip48
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen140
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen141
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 236.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks16
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks17
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks18
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+\copyins=\insert199
+\abstractbox=\box49
+\listisep=\skip51
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip52
+\belowcaptionskip=\skip53
+\captionindent=\dimen149
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks25
+
+Class amsart Warning: \dh unavailable without amsfonts; replaced by 'dh' on inp
+ut line 1842.
+
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks26
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count195
+\Gm@cntv=\count196
+\c@Gm@tempcnt=\count197
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
+\Gm@dimlist=\toks27
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mathdesign.sty
+Package: mathdesign 2013/08/29 v2.31 Math Design Project
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/mdbch.cfg) (/u
+sr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/mdbch.sty
+Package: mdbch 2013/08/29 v2.31 bitstream bitstream charter + mdbch (Math Desig
+n Project)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdfont.def
+File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdsffont.def
+File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 53.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 56.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 59.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 79.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 102.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 105.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 108.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 128.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 259.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 262.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 265.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 268.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 313.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 316.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 319.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 322.
+
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdttfont.def
+File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
+)
+\symmdcal=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
+(Font)                  OMS/xmdcmsy/m/n --> OMS/xmdcmsy/b/n on input line 94.
+\symmdscr=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 103.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/mdbch/m/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/mdbch/m/it on input line 122.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/mdbch/m/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/m/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 126.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mdbch/b/it on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mdbch/b/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/b/n on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/mdbch/m/n --> TU/mdbch/m/n on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/mdbch/b/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/mdbch/m/it on input line 133.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 134.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 135.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/mdbch/b/n --> TU/mdbch/b/n on input line 137.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/mdbch/b/n on input line 138.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/mdbch/b/it on input line 139.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 140.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 141.
+\symlettersupright=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
+(Font)                  OML/mdbch/m/n --> OML/mdbch/b/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/xmdcmsy/m/n --> OMS/xmdcmsy/m/n on input line 165.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local
+/texlive/2021/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
+)
+\XKV@depth=\count198
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+LaTeX Font Info:    Trying to load font information for TU+mdbch on input line 
+186.
+LaTeX Font Info:    No file TUmdbch.fd. on input line 186.
+
+LaTeX Font Warning: Font shape `TU/mdbch/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 186.
+
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 449.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 450.
+\symmathdesignA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
+(Font)                  MDA/mdbch/m/n --> MDA/mdbch/b/n on input line 491.
+\symmathdesignB=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
+(Font)                  MDB/mdbch/m/n --> MDB/mdbch/b/n on input line 498.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
+\rulethickness=\skip57
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+mdbch on input line 
+112.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/t1mdbch.fd
+File: t1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdbch.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 112.
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+\c@theorem=\count266
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2021-03-18 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count267
+\l__pdf_internal_box=\box50
+) (./blackhole.aux)
+\openout1 = blackhole.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+3.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 2
+3.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdacmr.fd
+File: mdacmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for MDB+cmr on input line 2
+3.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
+File: mdbcmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+mdbch on input line
+ 23.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/ot1mdbch.fd
+File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
+)
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OML+mdbch on input line
+ 23.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/omlmdbch.fd
+File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
+)
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OMS+mdbch on input line
+ 23.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/omsmdbch.fd
+File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
+)
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line
+ 23.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
+File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
+)
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
+(Font)              scaled to size 7.54395pt on input line 23.
+LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
+(Font)              scaled to size 5.65796pt on input line 23.
+LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
+(Font)              scaled to size 4.71497pt on input line 23.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line
+ 23.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
+File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
+)
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+LaTeX Font Info:    Trying to load font information for MDB+mdbch on input line
+ 23.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/mdbmdbch.fd
+File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
+)
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 23.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 23.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 23.
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-37.36449pt
+* \headheight=8.0pt
+* \headsep=14.0pt
+* \topskip=10.0pt
+* \footskip=12.0pt
+* \marginparwidth=90.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=7.0pt plus 11.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 9.60007pt on input line 24.
+LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
+(Font)              scaled to size 9.60007pt on input line 27.
+
+LaTeX Font Warning: Font shape `T1/mdbch/m/up' undefined
+(Font)              using `T1/mdbch/m/n' instead on input line 27.
+
+LaTeX Font Info:    Font shape `T1/mdbch/m/up' will be
+(Font)              scaled to size 9.60007pt on input line 27.
+LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
+(Font)              scaled to size 9.60007pt on input line 35.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
+(Font)              scaled to size 9.42993pt on input line 40.
+LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
+(Font)              scaled to size 6.60095pt on input line 40.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 40.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 40.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 95.
+[1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./bl
+ackhole.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+)
+
+Here is how much of LuaTeX's memory you used:
+ 4242 strings out of 478531
+ 100000,383344 words of node,token memory allocated
+ 548 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 7 kern, 1 glyph, 12 attribute, 57 glue_spec
+, 12 attribute_list, 1 write nodes
+   avail lists: 2:204,3:120,4:4,5:136,6:42,7:2986,8:36,9:184,10:3,11:202
+ 23914 multiletter control sequences out of 65536+600000
+ 120 fonts using 8908359 bytes
+ 82i,4n,84p,240b,211s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/local
+/texlive/2021/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive
+/2021/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7m.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri7m.
+pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-c
+hrma.pfb>
+Output written on blackhole.pdf (1 page, 53412 bytes).
+
+PDF statistics: 45 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
+

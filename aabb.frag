@@ -28,9 +28,12 @@ vec3 traceColor(vec3 position, vec3 direction) {
 }
 
 void main() {
-    vec4 clip = vec4((gl_FragCoord.xy / iResolution.xy) * 2.0 - 1.0, -1.0, 1.0);
-    vec4 eye = vec4((inverse(iProjection) * clip).xy, -1.0, 0.0);
-    vec3 direction = normalize((inverse(iView) * eye).xyz);
+    vec2 uv = gl_FragCoord.xy / iResolution.xy;
+    vec4 ndc = vec4(uv * 2.0 - 1.0, -1.0, 1.0);
+    vec4 view = inverse(iProjection) * ndc; view /= view.w;
+    vec4 world = inverse(iView) * view;
+
+    vec3 direction = normalize(world.xyz - iPosition);
     vec3 position = iPosition;
 
     FragColor = vec4(traceColor(position, direction), 1.0);

@@ -96,8 +96,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 
 // camera position in spherical coordinates
-float r = 10.0f;
-float th = glm::radians(75.0f);
+float r = 8.0f;
+float th = glm::radians(88.0f);
 float ph = glm::radians(270.0f);
 
 // mouse processing
@@ -109,11 +109,10 @@ const double eps = 0.01f;
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
 	if (button == GLFW_MOUSE_BUTTON_LEFT) {
 		if (action == GLFW_PRESS) {
-			isDragging = false; // true
+			isDragging = true;
 			glfwGetCursorPos(window, &up, &vp);
-		} else if (action == GLFW_RELEASE) {
+		} else if (action == GLFW_RELEASE)
 			isDragging = false;
-		}
 	}
 }
 void cursor_position_callback(GLFWwindow* window, double u, double v) {
@@ -147,7 +146,6 @@ int main() {
 #endif
 	GLFWwindow *window = glfwCreateWindow(width, height, "Black hole", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
-
 	glfwSetKeyCallback(window, key_callback);
 	glfwSetMouseButtonCallback(window, mouse_button_callback);
 	glfwSetCursorPosCallback(window, cursor_position_callback);
@@ -156,9 +154,7 @@ int main() {
 
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-	ImGuiIO &io = ImGui::GetIO();
-	(void) io;
-	ImGui::StyleColorsDark();
+	ImGuiIO &io = ImGui::GetIO(); (void) io;
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 
@@ -174,7 +170,7 @@ int main() {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(quad), quad, GL_STATIC_DRAW);
 
 	std::ifstream vfs("../quad.vert");
-	std::ifstream ffs("../boyer_lindquist.frag");
+	std::ifstream ffs("../schwarzschild.frag");
 	std::stringstream vss;
 	std::stringstream fss;
 	vss << vfs.rdbuf();
@@ -232,29 +228,28 @@ int main() {
 
 
 	int steps = 200;
-	float timeStep = 0.050f;
+	float step = 0.06f;
 
 	while (!glfwWindowShouldClose(window)) {
+		glfwPollEvents();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glfwGetFramebufferSize(window, &width, &height);
 		glViewport(0, 0, width, height);
-		ImVec2 mousePos = ImGui::GetMousePos();
-		int x = static_cast<int>(mousePos.x);
-		int y = static_cast<int>(mousePos.y);
-		glUniform2f(glGetUniformLocation(program, "iMouse"), (float)x, (float)y);
 		glUniform2f(glGetUniformLocation(program, "iResolution"), (float)width, (float)height);
+
+
 		glUniform1f(glGetUniformLocation(program, "iTime"), (float)glfwGetTime());
 
 		glm::vec3 position(r * sin(th) * cos(ph), r * sin(th) * sin(ph), r * cos(th));
 		glm::mat4 view = glm::lookAt(position, glm::vec3(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)(width)/(float)(height), 0.1f, 100.0f);
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);
 		glUniform3f(glGetUniformLocation(program, "iPosition"), position.x, position.y, position.z);
 		glUniformMatrix4fv(glGetUniformLocation(program, "iView"), 1, GL_FALSE, &view[0][0]);
 		glUniformMatrix4fv(glGetUniformLocation(program, "iProjection"), 1, GL_FALSE, &projection[0][0]);
 
 		glUniform1i(glGetUniformLocation(program, "iSteps"), steps);
-		glUniform1f(glGetUniformLocation(program, "iTimeStep"), timeStep);
+		glUniform1f(glGetUniformLocation(program, "iStep"), step);
 
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
@@ -271,18 +266,23 @@ int main() {
 		// mouse processing, in fact, registration of callback is faster
 
 
+
+
 		GLubyte pixel[3] = {0, 0, 0};
-		glReadPixels(2 * x, height - 2 * y, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
+		ImVec2 mousePos = ImGui::GetMousePos();
+		// glUniform2f(glGetUniformLocation(program, "iMouse"), (float)mousePos.x, (float)mousePos.y);
+		glReadPixels(2 * (int)mousePos.x, height - 2 * (int)mousePos.y, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
 
 		ImGui_ImplOpenGL3_NewFrame(), ImGui_ImplGlfw_NewFrame(), ImGui::NewFrame();
 		ImGui::Begin("Black hole");
 		ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
 		ImGui::Text("Recording: %s", recording ? "ON" : "OFF");
-		ImGui::SliderFloat("Radius", &r, 1.0f, 50.0f);
-		ImGui::SliderInt("Steps", &steps, 0, 300);
-		ImGui::SliderFloat("Time step", &timeStep, 0.001f, 0.1f);
-		ImGui::Text("Mouse: (%d, %d)", x, y);
-		ImGui::Text("(r,th,ph): (%.3f, %.3f, %.3f)", pixel[0] / 255.0f, pixel[1] / 255.0f, pixel[2] / 255.0f);
+		ImGui::SliderFloat("Radius", &r, 1.0f, 10.0f);
+		ImGui::SliderInt("Steps", &steps, 0, 1000);
+		ImGui::SliderFloat("Step", &step, 0.0001f, 0.1f);
+		ImGui::Text("Position: (x, y, z) = (%.3f, %.3f, %.3f)", position.x, position.y, position.z);
+		ImGui::Text("Mouse: (%d, %d)", (int)mousePos.x, (int)mousePos.y);
+		ImGui::Text("(r,g,b): (%.3f, %.3f, %.3f)", pixel[0] / 255.0f, pixel[1] / 255.0f, pixel[2] / 255.0f);
 		ImGui::ColorButton("Color", ImVec4(pixel[0] / 255.0f, pixel[1] / 255.0f, pixel[2] / 255.0f, 1.0f), ImGuiColorEditFlags_NoTooltip, ImVec2(50, 50));
 		ImGui::End();
 		ImGui::Render();
@@ -290,7 +290,6 @@ int main() {
 
 		// swapping buffer
 		glfwSwapBuffers(window);
-		glfwPollEvents();
 	}
 
 	ImGui_ImplOpenGL3_Shutdown();

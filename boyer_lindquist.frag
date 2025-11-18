@@ -6,7 +6,6 @@ uniform mat4 iView;
 uniform mat4 iProjection;
 uniform int iSteps;
 uniform float iTimeStep;
-uniform vec2 iMouse;
 out vec4 FragColor;
 //layout(rgba32f, binding = 0) writeonly uniform image2D rayPathImage;
 
